@@ -2,13 +2,15 @@
 const CARDANO_WALLET_SERVER = "http://127.0.0.1:8090/v2";
 
 //root path
-const API_V1 = "/api/v1";
+const API_V1 = "/trace/api/v1";
 
 //Cardano-wallet constants
 const SEED_SIZE = 24;
 const WALLET_NAME_PREFIX = "FP_";
 
 //app routes
+const PRODUCT_SAVE = "/product"
+
 const REGISTER = "/register";
 const GET_ASSETS = "/wallet/:userUuid";
 const TRANSACT = "/transact";
@@ -86,4 +88,5 @@ module.exports = {
   TRANSACTION_DESCRIPTION,
   TX_COMPLETE,
   TRANSACTIONS_LIST,
+  PRODUCT_SAVE
 };

@@ -1,19 +1,35 @@
-const { response } = require("express");
 const {
   CLIENT_ERROR,
   REQUIRED_INPUT,
   SERVER_ERROR,
   RESPONSE_OK,
-  ERR_ACCESS_TOKEN_FETCH,
   ERR_FETCH_USER_WALLET,
+  RESPONSE_CREATED,
 } = require("../constants/api-strings");
-const {
-  processTransaction,
-  transfer,
-  walletAssets,
-  paymentConfirmation,
-  transactionsList,
-} = require("../services/transaction");
+const { addNew } = require("../services/Product");
+
+
+const save = async (request, response) => {
+  const { productName, weight, harvestDate, collectionDate, grade, category, farm, rating, comments, collectionPoint } = request.body;
+  if (!productName || !weight || !harvestDate || !collectionDate || !farm || !rating || !comments || !collectionPoint || !grade || !category ){
+    return response.status(CLIENT_ERROR).json({
+      data: {
+        error: REQUIRED_INPUT,
+      },
+    });
+  }
+  try{
+  const saved = await addNew(request.body);
+  if(saved){
+        response.status(RESPONSE_CREATED).json(saved);
+    }
+  } catch (error){
+        console.log(error);
+        response.status(SERVER_ERROR).json({
+            'error': error, 
+        });
+   }
+}
 
 const getAssets = async (request, response) => {
   const url = request.url;
@@ -89,4 +105,4 @@ const getTransactionsList = async (request, response) => {
   }
 }
 
-module.exports = { getAssets, buy, transferAssets, confirmTxComplete, getTransactionsList };
+module.exports = { save };
