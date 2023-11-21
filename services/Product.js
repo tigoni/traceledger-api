@@ -14,6 +14,7 @@ const addNew = async (productDetails) => {
     rating,
     comments,
     collectionPoint,
+    nftUrl,
   } = productDetails;
   try {
     added = await product.create({
@@ -27,6 +28,7 @@ const addNew = async (productDetails) => {
       rating: rating,
       comments: comments,
       collectionPoint: collectionPoint,
+      nftTxIdUrl: nftUrl,
     });
   } catch (error) {
     throw new Error(`User registration: ${ERR_SAVE_FAIL} because ${error}`);
@@ -34,4 +36,8 @@ const addNew = async (productDetails) => {
   return added;
 };
 
-module.exports = { addNew };
+const listItems = async () => {
+  return await product.find({});
+};
+
+module.exports = { addNew, listItems };

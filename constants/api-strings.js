@@ -10,6 +10,7 @@ const WALLET_NAME_PREFIX = "FP_";
 
 //app routes
 const PRODUCT_SAVE = "/product"
+const LIST_PRODUCTS = "/products/list"
 
 const REGISTER = "/register";
 const GET_ASSETS = "/wallet/:userUuid";
@@ -88,5 +89,6 @@ module.exports = {
   TRANSACTION_DESCRIPTION,
   TX_COMPLETE,
   TRANSACTIONS_LIST,
-  PRODUCT_SAVE
+  PRODUCT_SAVE,
+  LIST_PRODUCTS
 };
