@@ -37,7 +37,7 @@ const addNew = async (productDetails) => {
 };
 
 const listItems = async () => {
-  return await product.find({});
+  return await product.find({}).limit(10);
 };
 
 module.exports = { addNew, listItems };
