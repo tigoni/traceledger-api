@@ -1,4 +1,4 @@
-const product = require("../database/Product");
+const product = require("../database/Shipment");
 const { ERR_SAVE_FAIL } = require("../constants/api-strings");
 
 const addNew = async (productDetails) => {
