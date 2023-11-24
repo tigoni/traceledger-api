@@ -10,6 +10,7 @@ const WALLET_NAME_PREFIX = "FP_";
 
 //app routes
 const ADD_PRODUCE = "/produce/add"
+const ADD_DISPATCH = "/dispatch/add";
 const GET_PRODUCE = "/produce/list"
 const GET_CROPS = '/crops/list';
 const GET_FARM = '/farms/list';
@@ -97,4 +98,5 @@ module.exports = {
   GET_CROPS,
   GET_FARM,
   GET_CUSTOMERS,
+  ADD_DISPATCH,
 };
