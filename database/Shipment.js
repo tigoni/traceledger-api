@@ -8,13 +8,17 @@ const dispatchSchema = new Schema({
     type: String,
     default: () => randomUUID(),
   },
-  productName: {
+  produceItems: {
     type: Schema.Types.ObjectId,
     ref: 'Produce',
   },
-  destination: {
-    type: String,
-    default: "",
+  packWeight: {
+    type: Number,
+    default: 1,
+  },
+  customer: {
+    type: Schema.Types.ObjectId,
+    ref: 'Customer',
   },
   packedOn: {
     type: Date,
@@ -26,7 +30,7 @@ const dispatchSchema = new Schema({
   },
   status: {type: Schema.Types.ObjectId, ref: 'Status'},
   dispatchNft: {
-    required: true,
+    // required: true,
     type: String,
   },
 },
