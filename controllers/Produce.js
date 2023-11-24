@@ -2,37 +2,33 @@ const {
   CLIENT_ERROR,
   REQUIRED_INPUT,
   SERVER_ERROR,
-  RESPONSE_OK,
-  ERR_FETCH_USER_WALLET,
   RESPONSE_CREATED,
 } = require("../constants/api-strings");
-const { addNew, listItems } = require("../services/Product");
+const { addNew } = require("../services/Produce");
 
-const save = async (request, response) => {
+const addProduce = async (request, response) => {
   const {
     productName,
+    farm,
     weight,
+    grade,
     harvestDate,
     collectionDate,
-    grade,
-    category,
-    farm,
-    rating,
-    comments,
     collectionPoint,
+    pesticidesUsed,
+    comments,
     nftUrl,
   } = request.body;
   if (
     !productName ||
+    !farm ||
     !weight ||
+    !grade ||
     !harvestDate ||
     !collectionDate ||
-    !farm ||
-    !rating ||
-    !comments ||
     !collectionPoint ||
-    !grade ||
-    !category ||
+    !pesticidesUsed ||
+    !comments ||
     !nftUrl
   ) {
     return response.status(CLIENT_ERROR).json({
@@ -54,9 +50,9 @@ const save = async (request, response) => {
   }
 };
 
-const list = async (req, res) => {
-   res.json(await listItems());
-};
+// const list = async (req, res) => {
+//    res.json(await listItems());
+// };
 
 // const getAssets = async (request, response) => {
 //   const url = request.url;
@@ -132,4 +128,4 @@ const list = async (req, res) => {
 //   }
 // }
 
-module.exports = { save, list };
+module.exports = { addProduce};

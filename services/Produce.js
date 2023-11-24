@@ -1,33 +1,32 @@
-const product = require("../database/Shipment");
+const Product = require("../database/Produce");
 const { ERR_SAVE_FAIL } = require("../constants/api-strings");
 
 const addNew = async (productDetails) => {
   let added = null;
   const {
     productName,
+    farm,
     weight,
+    grade,
     harvestDate,
     collectionDate,
-    grade,
-    category,
-    farm,
-    rating,
-    comments,
     collectionPoint,
+    pesticidesUsed,
+    comments,
     nftUrl,
   } = productDetails;
   try {
-    added = await product.create({
+    added = await Product.create({
       productName: productName,
+      farm: farm,
       weight: weight,
+      grade: grade,
       harvestDate: harvestDate,
       collectionDate: collectionDate,
-      grade: grade,
-      category: category,
-      farm: farm,
-      rating: rating,
-      comments: comments,
       collectionPoint: collectionPoint,
+      pesticidesUsed,
+      weight: weight,
+      comments: comments,
       nftTxIdUrl: nftUrl,
     });
   } catch (error) {
@@ -36,8 +35,8 @@ const addNew = async (productDetails) => {
   return added;
 };
 
-const listItems = async () => {
-  return await product.find({}).limit(10);
+const listProduce = async () => {
+  return await Product.find({}).limit(10);
 };
 
-module.exports = { addNew, listItems };
+module.exports = { addNew, listProduce };

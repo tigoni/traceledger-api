@@ -7,6 +7,10 @@ const produceSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Crop',
     },
+    farm: {
+        type: Schema.Types.ObjectId,
+        ref: 'Farm'
+    },
     weight: {
         type: String,
         default: "",
@@ -18,6 +22,10 @@ const produceSchema = new Schema({
     collectedOn: {
         type: Object,
         default: {},
+    },
+    collectionPoint: {
+        type: String,
+        default: '',
     },
     harvestGrade: {
         type: String,

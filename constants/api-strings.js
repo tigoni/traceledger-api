@@ -9,9 +9,10 @@ const SEED_SIZE = 24;
 const WALLET_NAME_PREFIX = "FP_";
 
 //app routes
-const PRODUCT_SAVE = "/product"
-const LIST_PRODUCTS = "/products/list"
+const ADD_PRODUCE = "/produce/add"
+const GET_PRODUCE = "/produce/list"
 const GET_CROPS = '/crops/list';
+const GET_FARM = '/farms/list';
 
 const REGISTER = "/register";
 const GET_ASSETS = "/wallet/:userUuid";
@@ -90,7 +91,8 @@ module.exports = {
   TRANSACTION_DESCRIPTION,
   TX_COMPLETE,
   TRANSACTIONS_LIST,
-  PRODUCT_SAVE,
-  LIST_PRODUCTS,
+  ADD_PRODUCE,
+  GET_PRODUCE,
   GET_CROPS,
+  GET_FARM,
 };

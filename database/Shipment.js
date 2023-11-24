@@ -12,10 +12,6 @@ const dispatchSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Produce',
   },
-  origin: {
-    type: Schema.Types.ObjectId,
-    ref: 'Farm',
-  },
   destination: {
     type: String,
     default: "",
