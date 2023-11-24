@@ -1,4 +1,4 @@
-const Product = require("../database/Produce");
+const Produce = require("../database/Produce");
 const { ERR_SAVE_FAIL } = require("../constants/api-strings");
 
 const addNew = async (productDetails) => {
@@ -16,8 +16,8 @@ const addNew = async (productDetails) => {
     nftUrl,
   } = productDetails;
   try {
-    added = await Product.create({
-      productName: productName,
+    added = await Produce.create({
+      name: productName,
       farm: farm,
       weight: weight,
       grade: grade,
@@ -36,7 +36,7 @@ const addNew = async (productDetails) => {
 };
 
 const listProduce = async () => {
-  return await Product.find({}).limit(10);
+  return await Produce.find({}).limit(10);
 };
 
 module.exports = { addNew, listProduce };

@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const produceSchema = new Schema({
     date: { type: Date, default: Date.now },
-    produce: {
+    name: {
         type: Schema.Types.ObjectId,
         ref: 'Crop',
     },

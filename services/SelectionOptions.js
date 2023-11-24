@@ -11,7 +11,7 @@ return await Farm.find({});
 }
 
 const listAllProduce = async () => { 
-return await Produce.find({});
+return await Produce.find({}).populate('name').exec();
 }
 
 
