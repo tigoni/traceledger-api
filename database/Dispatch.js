@@ -28,7 +28,7 @@ const dispatchSchema = new Schema({
     type: String,
     default: "",
   },
-  status: {type: Schema.Types.ObjectId, ref: 'Status'},
+  dispatchStatus: {type: Schema.Types.ObjectId, ref: 'Status'},
   dispatchNft: {
     // required: true,
     type: String,

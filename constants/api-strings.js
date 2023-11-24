@@ -15,6 +15,7 @@ const GET_PRODUCE = "/produce/list"
 const GET_CROPS = '/crops/list';
 const GET_FARM = '/farms/list';
 const GET_CUSTOMERS = '/customers/list';
+const GET_DISPATCH_ITEMS = '/dispatch/list'
 
 const REGISTER = "/register";
 const GET_ASSETS = "/wallet/:userUuid";
@@ -99,4 +100,5 @@ module.exports = {
   GET_FARM,
   GET_CUSTOMERS,
   ADD_DISPATCH,
+  GET_DISPATCH_ITEMS
 };

@@ -4,7 +4,7 @@ const { ERR_SAVE_FAIL } = require("../constants/api-strings");
 const addNew = async (dispatchDetails) => {
     let added = null;
     const {
-        produceItem,
+        produceItems,
         packWeight,
         destination,
         packedOn,
@@ -14,7 +14,7 @@ const addNew = async (dispatchDetails) => {
     } = dispatchDetails;
     try {
         added = await Dispatch.create({
-            produceItem,
+            produceItems,
             packWeight,
             destination,
             packedOn,
@@ -30,7 +30,7 @@ const addNew = async (dispatchDetails) => {
 };
 
 const listDispatches = async () => {
-    return await Dispatch.find({}).limit(10);
+    return await Dispatch.find({}).populate('dispatchStatus', 'produceItems').exec();
 };
 
 module.exports = { addNew, listDispatches };

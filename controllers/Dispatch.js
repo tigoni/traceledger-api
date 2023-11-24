@@ -4,11 +4,11 @@ const {
     SERVER_ERROR,
     RESPONSE_CREATED,
 } = require("../constants/api-strings");
-const { addNew } = require("../services/Dispatch");
+const { addNew, listDispatches} = require("../services/Dispatch");
 
 const addDispatch = async (request, response) => {
     const {
-        produceItem,
+        produceItems,
         packWeight,
         destination,
         packedOn,
@@ -16,7 +16,7 @@ const addDispatch = async (request, response) => {
         status,
     } = request.body;
     if (
-        !produceItem ||
+        !produceItems ||
         !packWeight ||
         !destination||
         !packedOn ||
@@ -42,4 +42,13 @@ try {
 }
 }
 
-module.exports = {addDispatch}
+const getDispatchItems = async (request, response) => {
+
+    try {
+        return response.json(await listDispatches());
+    } catch (error) {
+        console.log(`Error: ${error}`);
+    }
+}
+
+module.exports = {addDispatch, getDispatchItems}
