@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const dispatchSchema = new Schema({
-  date: {type: Date, default: Date.now},
+  date: { type: Date, default: Date.now },
   dispatchId: {
     type: String,
     default: () => randomUUID(),
@@ -28,12 +28,12 @@ const dispatchSchema = new Schema({
     type: String,
     default: "",
   },
-  dispatchStatus: {type: Schema.Types.ObjectId, ref: 'Status'},
+  dispatchStatus: { type: Schema.Types.ObjectId, ref: 'Status' },
   dispatchNft: {
     // required: true,
     type: String,
   },
 },
-  {timestamps: true},
+  { timestamps: true },
 );
 module.exports = mongoose.model("Dispatch", dispatchSchema);

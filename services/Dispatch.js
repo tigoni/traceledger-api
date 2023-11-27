@@ -1,4 +1,5 @@
 const Dispatch = require("../database/Dispatch");
+const Status = require ('../database/Status')
 const { ERR_SAVE_FAIL } = require("../constants/api-strings");
 
 const addNew = async (dispatchDetails) => {
@@ -20,7 +21,7 @@ const addNew = async (dispatchDetails) => {
             packedOn,
             packedBy,
             dispatchNftUrl,
-            status,
+            dispatchStatus: status,
 
         });
     } catch (error) {
@@ -30,7 +31,7 @@ const addNew = async (dispatchDetails) => {
 };
 
 const listDispatches = async () => {
-    return await Dispatch.find({}).populate('dispatchStatus', 'produceItems').exec();
+    return await Dispatch.find({}).populate('dispatchStatus').populate({path:'produceItems', populate: {path: 'farm'}, populate:{path: 'name'}}).exec();
 };
 
 module.exports = { addNew, listDispatches };
