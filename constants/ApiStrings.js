@@ -1,5 +1,3 @@
-//servers
-const CARDANO_WALLET_SERVER = "http://127.0.0.1:8090/v2";
 
 //root path
 const API_V1 = "/trace/api/v1";
@@ -16,14 +14,6 @@ const GET_CROPS = '/crops/list';
 const GET_FARM = '/farms/list';
 const GET_CUSTOMERS = '/customers/list';
 const GET_DISPATCH_ITEMS = '/dispatch/list'
-
-const REGISTER = "/register";
-const GET_ASSETS = "/wallet/:userUuid";
-const TRANSACT = "/transact";
-const PURCHASE = `${TRANSACT}/buy`;
-const TRANSFER = "/transfer";
-const TX_COMPLETE = `${TRANSACT}/checkPaymentComplete`;
-const TRANSACTIONS_LIST = '/wallet/transactions/:userUuid';
 
 //http headers
 const CONTENT_TYPE = "Content-Type";
@@ -50,23 +40,9 @@ const CIPHER_ALGORITHM = "aes-256-cbc";
 const STR_BASE64 = "base64";
 const STR_UTF8 = "utf8";
 
-//transactions
-const ACCESS_TOKEN_URL =
-  "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials";
-const BUSINESS_SHORT_CODE = 174379;
-const API_KEYPASS =
-  "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919";
-const TRANSACTION_TYPE = "CustomerPayBillOnline";
-const KIBANDA_APP_USERNAME = "DjnHPxsnQF91LV77bWzWcQJWBiporMrB";
-const KIBANDA_APP_PASSWORD = "uI9UzgDvSMlmdkD9";
-const TRANSACTION_DESCRIPTION = "Fuse Ltd";
 
 module.exports = {
-  CARDANO_WALLET_SERVER,
   API_V1,
-  WALLET_NAME_PREFIX,
-  SEED_SIZE,
-  REGISTER,
   CONTENT_TYPE,
   AUTHORIZATION,
   RESPONSE_CREATED,
@@ -82,18 +58,6 @@ module.exports = {
   CIPHER_ALGORITHM,
   STR_BASE64,
   STR_UTF8,
-  GET_ASSETS,
-  PURCHASE,
-  TRANSFER,
-  ACCESS_TOKEN_URL,
-  BUSINESS_SHORT_CODE,
-  API_KEYPASS,
-  TRANSACTION_TYPE,
-  KIBANDA_APP_USERNAME,
-  KIBANDA_APP_PASSWORD,
-  TRANSACTION_DESCRIPTION,
-  TX_COMPLETE,
-  TRANSACTIONS_LIST,
   ADD_PRODUCE,
   GET_PRODUCE,
   GET_CROPS,

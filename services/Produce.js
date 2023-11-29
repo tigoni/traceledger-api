@@ -1,5 +1,5 @@
 const Produce = require("../database/Produce");
-const { ERR_SAVE_FAIL } = require("../constants/api-strings");
+const { ERR_SAVE_FAIL } = require("../constants/ApiStrings");
 
 const addNew = async (productDetails) => {
   let added = null;

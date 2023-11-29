@@ -1,17 +1,16 @@
 {
-  "name": "fuse-backend",
+  "name": "traceledger-backend",
   "version": "1.0.0",
-  "description": "Backend services for the Fuse mobile app",
+  "description": "Backend services for the TraceLedger webapp",
   "main": "server.js",
   "scripts": {
     "test": "test",
-    "dev": "nodemon --trace-uncaught server.js"
+    "dev": "nodemon --trace-uncaught Server.js"
   },
   "author": "KM",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
-    "cardano-wallet-js": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",

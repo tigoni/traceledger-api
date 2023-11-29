@@ -4,9 +4,9 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
-const {API_V1} = require('./constants/api-strings');
-const v1Router = require('./v1/routes/routes');
-const connectDB = require('./utils/db-connection');
+const {API_V1} = require('./constants/ApiStrings');
+const v1Router = require('./v1/routes/Routes');
+const connectDB = require('./utils/DbConnection');
 
 connectDB();
 const app = express();

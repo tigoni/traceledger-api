@@ -3,7 +3,7 @@ const {
     REQUIRED_INPUT,
     SERVER_ERROR,
     RESPONSE_CREATED,
-} = require("../constants/api-strings");
+} = require("../constants/ApiStrings");
 const { addNew, listDispatches} = require("../services/Dispatch");
 
 const addDispatch = async (request, response) => {

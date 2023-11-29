@@ -5,7 +5,7 @@ const {
     RESPONSE_OK,
     ERR_FETCH_USER_WALLET,
     RESPONSE_CREATED,
-} = require("../constants/api-strings");
+} = require("../constants/ApiStrings");
 const { listAllFarms, listAllCrops, listAllProduce, listAllCustomers } = require("../services/SelectionOptions");
 
 

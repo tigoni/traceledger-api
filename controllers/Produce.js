@@ -3,7 +3,7 @@ const {
   REQUIRED_INPUT,
   SERVER_ERROR,
   RESPONSE_CREATED,
-} = require("../constants/api-strings");
+} = require("../constants/ApiStrings");
 const { addNew } = require("../services/Produce");
 
 const addProduce = async (request, response) => {

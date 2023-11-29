@@ -1,6 +1,6 @@
 const Dispatch = require("../database/Dispatch");
 const Status = require ('../database/Status')
-const { ERR_SAVE_FAIL } = require("../constants/api-strings");
+const { ERR_SAVE_FAIL } = require("../constants/ApiStrings");
 
 const addNew = async (dispatchDetails) => {
     let added = null;
