@@ -27,7 +27,6 @@ const addProduce = async (request, response) => {
     !harvestDate ||
     !collectionDate ||
     !collectionPoint ||
-    !pesticidesUsed ||
     !comments ||
     !nftUrl
   ) {
