@@ -11,7 +11,7 @@ const addNew = async (productDetails) => {
     harvestDate,
     collectionDate,
     collectionPoint,
-    pesticidesUsed,
+    // pesticidesUsed,
     comments,
     nftUrl,
   } = productDetails;
@@ -24,7 +24,7 @@ const addNew = async (productDetails) => {
       harvestDate: harvestDate,
       collectionDate: collectionDate,
       collectionPoint: collectionPoint,
-      pesticidesUsed,
+      // pesticidesUsed,
       weight: weight,
       comments: comments,
       nftTxIdUrl: nftUrl,
