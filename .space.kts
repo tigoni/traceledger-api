@@ -1,5 +1,5 @@
 job("Run npm test and deploy") {
-    container(displayName = "Run deploy script", image = "node:14-alpine") {
+    container(displayName = "Run deploy script", image = "node:18-alpine") {
         shellScript {
             interpreter = "/bin/sh"
             content = """
