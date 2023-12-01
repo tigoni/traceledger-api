@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+
+    traceledger_api:
+        build: .
+        image: traceledger_api
+        container_name: traceledger_api 
+        restart: unless-stopped
+        networks:
+            - app-network
+networks:
+    app-network:
+        driver: bridge
