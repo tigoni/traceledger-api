@@ -1,23 +1,16 @@
-const Crop = require("../database/Crop");
-const Produce = require("../database/Produce");
-const Farm = require("../database/Farm");
-const Customer = require('../database/Customer')
+const Crop = require('../database/Crop');
+const Produce = require('../database/Produce');
+const Farm = require('../database/Farm');
+const Customer = require('../database/Customer');
 
-const listAllCrops = async () => { 
-return await Crop.find({});
-}
+const listAllCrops = async () => Crop.find({});
 
-const listAllFarms = async () => { 
-return await Farm.find({});
-}
+const listAllFarms = async () => Farm.find({});
 
-const listAllProduce = async () => { 
-return await Produce.find({}).populate('name').exec();
-}
+const listAllProduce = async () => Produce.find({}).populate('name').exec();
 
-const listAllCustomers = async () => { 
-return await Customer.find({});
-}
+const listAllCustomers = async () => Customer.find({});
 
-
-module.exports = { listAllCrops, listAllFarms, listAllProduce, listAllCustomers };
+module.exports = {
+  listAllCrops, listAllFarms, listAllProduce, listAllCustomers,
+};

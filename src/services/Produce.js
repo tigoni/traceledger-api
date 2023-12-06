@@ -1,5 +1,5 @@
-const Produce = require("../database/Produce");
-const { ERR_SAVE_FAIL } = require("../constants/ApiStrings");
+const Produce = require('../database/Produce');
+const { ERR_SAVE_FAIL } = require('../constants/ApiStrings');
 
 const addNew = async (productDetails) => {
   let added = null;
@@ -18,15 +18,14 @@ const addNew = async (productDetails) => {
   try {
     added = await Produce.create({
       name: productName,
-      farm: farm,
-      weight: weight,
-      grade: grade,
-      harvestDate: harvestDate,
-      collectionDate: collectionDate,
-      collectionPoint: collectionPoint,
+      farm,
+      weight,
+      grade,
+      harvestDate,
+      collectionDate,
+      collectionPoint,
       // pesticidesUsed,
-      weight: weight,
-      comments: comments,
+      comments,
       nftTxIdUrl: nftUrl,
     });
   } catch (error) {
@@ -35,8 +34,6 @@ const addNew = async (productDetails) => {
   return added;
 };
 
-const listProduce = async () => {
-  return await Produce.find({}).limit(10);
-};
+const listProduce = async () => Produce.find({}).limit(10);
 
 module.exports = { addNew, listProduce };

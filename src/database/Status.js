@@ -1,11 +1,12 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+
+const { Schema } = mongoose;
 
 const statusSchema = new Schema({
-    statusName: {
-        type: String,
-        default: "In-Store",
-    },
+  statusName: {
+    type: String,
+    default: 'In-Store',
+  },
 });
 
-module.exports = mongoose.model("Status", statusSchema);
+module.exports = mongoose.model('Status', statusSchema);
