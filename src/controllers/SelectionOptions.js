@@ -10,12 +10,13 @@ const { listAllFarms, listAllCrops, listAllProduce, listAllCustomers } = require
 
 
 const getCrops = async (request, response) => {
-
+    const
     try {
         return response.json(await listAllCrops());
     } catch (error) {
-        console.log(`Error: ${error}`);
+        return response.status(500).json({'error': 'Error occurred fetching items'})
     }
+    return;
 }
 
 const getFarm = async (request, response) => {

@@ -5,3 +5,5 @@ const { PORT } = process.env;
 app.listen(PORT, () => {
   console.log(`TraceLedger API listening on port ${PORT}`);
 });
+
+module.exports = app;

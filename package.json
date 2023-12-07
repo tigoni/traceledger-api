@@ -4,7 +4,7 @@
   "description": "Backend services for the TraceLedger webapp",
   "main": "server.js",
   "scripts": {
-    "test": "test",
+    "test": "cross-env NODE_ENV=test jest --detectOpenHandles --testTimeout=15000",
     "dev": "nodemon --trace-uncaught ./src/Server.js"
   },
   "author": "KM",
@@ -22,10 +22,12 @@
   },
   "devDependencies": {
     "@shelf/jest-mongodb": "^4.2.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.55.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.29.0",
     "jest": "^29.7.0",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.3"
   }
 }
